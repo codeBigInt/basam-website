@@ -6,7 +6,7 @@ import { RiTwitterXLine } from 'react-icons/ri'
 
 const ContactHeader = () => {
     return (
-        <div className="flex justify-between bg-[#0045db] max-sm:bg-[#1f186a] items-end lg:items-center py-4 lg:px-20 px-6 text-white">
+        <div id='contact-us' className="flex justify-between bg-[#0045db] max-sm:bg-[#1f186a] items-end lg:items-center py-4 lg:px-20 px-6 text-white">
             <div className='flex lg:flex-row flex-col lg:items-center gap-3 lg:gap-6'>
                 <span className='flex items-center gap-3 font'>
                     <FiPhone className='font-bold' size={16} />

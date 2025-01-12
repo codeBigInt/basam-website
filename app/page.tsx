@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import ContactHeader from "./components/ContactHeader";
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
@@ -14,15 +13,17 @@ import { useState } from "react";
 export default function Home() {
   const [isDislayed, setIsDisplayed] = useState(false)
   return (
-    <div className="w-full min-h-screen text-[#45355f] overflow-hidden">
+    <main className="w-full relative min-h-screen text-[#45355f]">
       <ContactHeader />
       <Nav isDisplayed={isDislayed} setIsDisplayed={setIsDisplayed} />
-      <Hero isDisplayed={isDislayed} setIsDisplayed={setIsDisplayed} />
-      <About />
-      <Goals />
-      <Services />
-      <Project />
-      <Footer />
-    </div>
+      <div className="overflow-x-hidden">
+        <Hero isDisplayed={isDislayed} setIsDisplayed={setIsDisplayed} />
+        <About />
+        <Goals />
+        <Services />
+        <Project />
+        <Footer />
+      </div>
+    </main>
   );
 }

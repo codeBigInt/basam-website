@@ -2,24 +2,14 @@
 import { ChevronDown, ChevronUp, Menu } from 'lucide-react';
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
     Sheet,
     SheetClose,
     SheetContent,
-    SheetHeader,
     SheetTitle,
     SheetTrigger,
 } from "@/components/ui/sheet";
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
-    DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-
 import { MdOutlineLibraryBooks } from 'react-icons/md'
 
 interface Props {
@@ -29,6 +19,20 @@ interface Props {
 
 const Nav = ({ isDisplayed, setIsDisplayed }: Props) => {
     const [isOpen, setIsOpen] = useState<boolean>(false)
+    const [scrolled, setScrolled] = useState(false)
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const isScrolled = window.scrollY > 0
+            setScrolled(isScrolled)
+        }
+
+        window.addEventListener('scroll', handleScroll)
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+        }
+    }, [])
     const nav = [
         {
             href: "#about",
@@ -46,11 +50,11 @@ const Nav = ({ isDisplayed, setIsDisplayed }: Props) => {
 
 
     return (
-        <div className='flex justify-between sticky top-0 z-50 bg-white items-center py-4 lg:px-20 px-6 text-black'>
-            <div className={`hidden`}>
-                <Image src='/assets/icons/mini-logo.webp' alt='mini-logo' width={100} height={50} />
+        <div className='flex justify-between sticky top-0 z-[999] bg-white items-center py-4 lg:px-20 px-6 text-black w-full'>
+            <div className={`${scrolled ? 'flex' : 'hidden'}`}>
+                <Image src='/assets/icons/mini-logo.webp' alt='mini-logo' width={50} height={50} />
             </div>
-            <div className={`flex`}>
+            <div className={`${scrolled ? 'hidden' : 'flex'}`}>
                 <Image src='/assets/icons/basam.webp' className='lg:w-[180px] w-[130px]' alt='logo' width={180} height={60} />
             </div>
             <ul className='lg:flex hidden  items-center gap-6 font-bold uppercase text-[#45355f]'>
@@ -58,10 +62,12 @@ const Nav = ({ isDisplayed, setIsDisplayed }: Props) => {
                 <Link href={"#services"} className='hover:bg-[#45355f] hover:text-white text-[14px] cursor-pointer py-2 px-4 rounded-lg'>Services</Link>
                 <Link href={"#projects"} className='hover:bg-[#45355f] hover:text-white text-[14px] cursor-pointer py-2 px-4 rounded-lg'>Projects</Link>
                 <div>
-                    <button onClick={() => setIsDisplayed(!isDisplayed)} className='py-3 flex px-4 items-center gap-2 hover:bg-[#45355f]/20 border border-[#45355f] rounded-lg'>
-                        <MdOutlineLibraryBooks />
-                        <span className='text-[14px]'>Make Appointment</span>
-                    </button>
+                    <Link href={"#contact-us"}>
+                        <button onClick={() => setIsDisplayed(!isDisplayed)} className='py-3 flex px-4 items-center gap-2 hover:bg-[#45355f]/20 border border-[#45355f] rounded-lg'>
+                            <MdOutlineLibraryBooks />
+                            <span className='text-[14px]'>Make Appointment</span>
+                        </button>
+                    </Link>
                 </div>
             </ul>
             <Sheet>
