@@ -1,6 +1,7 @@
 import React from 'react';
 import { Blocks, ScanQrCode, ShieldCheck, Verified } from "lucide-react"
 import { cn } from '@/lib/utils';
+import Image from 'next/image';
 
 const Goals = () => {
     const goalsArr = [
@@ -67,7 +68,9 @@ const Goals = () => {
                 {
                     goalsArr.map((goal, index) => (
                         <div key={index} className='shadow-xl p-6 my-4 lg:my-0 border bg-white rounded-lg flex flex-col gap-4'>
-                            <div className='bg-blue-400/5 rounded-lg w-full min-h-[200px]'></div>
+                            <div className='bg-blue-400/5 flex justify-center itemms-center rounded-lg w-full min-h-[300px]'>
+                                <Image width={200} height={200} src={index === 0 ? "/assets/images/fit.svg" : "/assets/images/best-place.svg"} className='w-full h-full object-fill' alt="rocket" />
+                            </div>
                             <h3 className='text-lg font-semibold capitalize'>{goal.text}</h3>
                             <p>{goal.desc}</p>
                         </div>
