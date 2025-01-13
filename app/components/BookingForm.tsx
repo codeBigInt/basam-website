@@ -38,6 +38,7 @@ const BookingForm = ({className}: Props) => {
 
   const handleSubmit = (data: FormData) => {
     // Handle form submission
+    console.log(data)
   }
 
   return (
