@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Basam Construction Website
 
-## Getting Started
+A modern, responsive landing page for Basam Construction - a construction and real estate development company based in Abuja, Nigeria.
 
-First, run the development server:
+## Project Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+This landing page showcases Basam Construction's services, projects, and company information. The website features a clean, professional design that highlights their expertise in construction, project management, real estate development, and consultancy services.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Responsive design optimized for all devices
+- Modern UI with smooth scrolling functionality
+- Project gallery showcase
+- Service listings
+- Company information sections
+- Contact information and appointment booking
+- Social media integration
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Sections
 
-## Learn More
+1. **Hero Section**
+   - Main banner with company tagline
+   - Call-to-action buttons for appointments and project viewing
 
-To learn more about Next.js, take a look at the following resources:
+2. **About Section**
+   - Company introduction
+   - Core values
+   - Mission and vision statements
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Services Section**
+   - Construction services
+   - Project Management
+   - Real Estate Development
+   - Consultancy Services
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. **Project Gallery**
+   - Showcase of completed projects
+   - Visual portfolio display
 
-## Deploy on Vercel
+5. **Contact Section**
+   - Office address
+   - Phone number
+   - Email contact
+   - Social media links
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Technical Details
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Contact Information
+- Phone: +234 (0) 7034481384
+- Email: info@basamconstruction.com
+- Address: First Floor, Block B 50, Ebitu Ukiwe Street, (Bright Star Plaza) Jabi, Abuja, FCT
+
+### Core Brand Values
+- Transparency
+- Professionalism
+- Safety
+- Creativity
+
+## Development Setup
+
+1. Clone the repository
+2. Install dependencies
+3. Run the development server
+4. Make necessary modifications to content or styling
+
+## Deployment
+
+[Add deployment instructions based on your hosting platform]
+
+## Maintenance
+
+Regular updates may be needed for:
+- Project gallery additions
+- Service updates
+- Contact information changes
+- Content modifications
+
+## Contributing
+
+For any changes or improvements:
+1. Fork the repository
+2. Create a new branch
+3. Submit a pull request
+
+## License
+
+[Add appropriate license information]
+
+## Support
+
+For support or inquiries, contact:
+- Technical support: [Add technical contact]
+- Content updates: info@basamconstruction.com
