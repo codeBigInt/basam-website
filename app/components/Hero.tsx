@@ -48,7 +48,7 @@ const Hero = ({ isDisplayed, setIsDisplayed }: Props) => {
           </div>
           <p className='text-white text-[14px] lg:text-[16px]'>Delivering Uncompromisung Construction services.</p>
           <div className='md:flex-row flex flex-col lg:gap-3'>
-            <button onClick={() => typeof window !== undefined && window.innerWidth > 740 ? setIsDisplayed(!isDisplayed) : (() => { })} className='py-3 lg:my-4 my-3 md:flex hidden px-8 items-center gap-2 hover:bg-[#45355f]/20 border text-white border-white w-max rounded-lg'>
+            <button onClick={() => typeof window !== "undefined" && window.innerWidth > 740 ? setIsDisplayed(!isDisplayed) : (() => { })} className='py-3 lg:my-4 my-3 md:flex hidden px-8 items-center gap-2 hover:bg-[#45355f]/20 border text-white border-white w-max rounded-lg'>
               <MdOutlineLibraryBooks />
               <span className='text-[14px]'>Make Appointment</span>
             </button>

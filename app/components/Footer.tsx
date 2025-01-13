@@ -35,9 +35,9 @@ const Footer = () => {
                 <div className='flex flex-col gap-3'>
                     <span className='text-[18px]'>Socials Handles</span>
                     <div className='flex items-center gap-4'>
-                        <RiTwitterXLine size={typeof window !== undefined && window.innerWidth < 740 ? 28 : 32} />
-                        <FaInstagram size={typeof window !== undefined && window.innerWidth < 740 ? 28 : 32} />
-                        <FaLinkedin size={typeof window !== undefined && window.innerWidth < 740 ? 28 : 32} />
+                        <RiTwitterXLine size={typeof window !== "undefined" && window.innerWidth < 740 ? 28 : 32} />
+                        <FaInstagram size={typeof window !== "undefined" && window.innerWidth < 740 ? 28 : 32} />
+                        <FaLinkedin size={typeof window !== "undefined" && window.innerWidth < 740 ? 28 : 32} />
                     </div>
                 </div>
             </div>
