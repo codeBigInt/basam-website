@@ -1,7 +1,6 @@
 "use client"
 import React, { useState } from 'react'
 import img1 from "../../public/assets/images/wuye.jpg";
-import img2 from "../../public/assets/images/img2.jpg";
 import img3 from "../../public/assets/images/img3.jpg";
 import img4 from "../../public/assets/images/img4.jpg";
 import img5 from "../../public/assets/images/img5.jpg";

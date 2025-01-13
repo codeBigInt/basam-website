@@ -4,9 +4,7 @@ import { z } from 'zod';
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { FormArray } from '../lib/array/FormArray';
-import Dropdown from './CategoryPicker';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft } from 'lucide-react';
 import {
   Select,
   SelectContent,
@@ -14,7 +12,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import Link from 'next/link';
 
 export const formSchema = z.object({
   username: z.string().min(3),

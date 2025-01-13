@@ -1,5 +1,4 @@
-import { LocateIcon, MapPin } from 'lucide-react'
-import Image from 'next/image'
+import { MapPin } from 'lucide-react'
 import React from 'react'
 import { FaInstagram, FaLinkedin } from 'react-icons/fa'
 import { FiPhone } from 'react-icons/fi'

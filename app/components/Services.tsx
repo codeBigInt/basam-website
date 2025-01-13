@@ -1,4 +1,4 @@
-import { HousePlug, Landmark, ListTodo, MessageCircleQuestion, Pickaxe, Verified } from 'lucide-react'
+import { HousePlug, ListTodo, MessageCircleQuestion, Pickaxe } from 'lucide-react'
 import React from 'react'
 
 const Services = () => {
