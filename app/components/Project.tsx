@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from 'react'
 import img1 from "../../public/assets/images/wuye.jpg";
 import img3 from "../../public/assets/images/img3.jpg";

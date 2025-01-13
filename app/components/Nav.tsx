@@ -23,14 +23,14 @@ const Nav = ({ isDisplayed, setIsDisplayed }: Props) => {
 
     useEffect(() => {
         const handleScroll = () => {
-            const isScrolled = window.scrollY > 0
+            const isScrolled = typeof window !== undefined && window.scrollY > 0
             setScrolled(isScrolled)
         }
 
-        window.addEventListener('scroll', handleScroll)
+        typeof window !== undefined && window.addEventListener('scroll', handleScroll)
 
         return () => {
-            window.removeEventListener('scroll', handleScroll)
+            typeof window !== undefined && window.removeEventListener('scroll', handleScroll)
         }
     }, [])
     const nav = [
