@@ -23,18 +23,18 @@ const Nav = ({ isDisplayed, setIsDisplayed }: Props) => {
 
     useEffect(() => {
         const handleScroll = () => {
-            const isScrolled = typeof window !== "undefined" && window.scrollY > 0
-            setScrolled(isScrolled)
+            setScrolled(window.scrollY > 0)
         }
 
-        if (typeof window === 'undefined') return;
-
         window.addEventListener('scroll', handleScroll)
+        
+        handleScroll()
 
         return () => {
             window.removeEventListener('scroll', handleScroll)
         }
     }, [])
+
     const nav = [
         {
             href: "#about",
@@ -49,7 +49,6 @@ const Nav = ({ isDisplayed, setIsDisplayed }: Props) => {
             route: "Projects"
         },
     ]
-
 
     return (
         <div className='flex justify-between sticky top-0 z-[999] bg-white items-center py-4 lg:px-20 px-6 text-black w-full'>
@@ -106,7 +105,6 @@ const Nav = ({ isDisplayed, setIsDisplayed }: Props) => {
 }
 
 export default Nav
-
 
 export const DropDown = () => {
     const subNav = [
