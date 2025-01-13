@@ -27,12 +27,12 @@ const Nav = ({ isDisplayed, setIsDisplayed }: Props) => {
             setScrolled(isScrolled)
         }
 
-        if (typeof window !== 'undefined') {
-            window.addEventListener('scroll', handleScroll)
-            
-            return () => {
-                window.removeEventListener('scroll', handleScroll)
-            }
+        if (typeof window === 'undefined') return;
+
+        window.addEventListener('scroll', handleScroll)
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
         }
     }, [])
     const nav = [
