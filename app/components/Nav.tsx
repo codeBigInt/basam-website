@@ -51,7 +51,7 @@ const Nav = ({ isDisplayed, setIsDisplayed }: Props) => {
     ]
 
     return (
-        <div className='flex justify-between sticky top-0 z-[999] bg-white items-center py-4 lg:px-20 px-6 text-black w-full'>
+        <div className='flex justify-between sticky top-0 z-[40] bg-white items-center py-4 lg:px-20 px-6 text-black w-full'>
             <div className={`${scrolled ? 'flex' : 'hidden'}`}>
                 <Image src='/assets/icons/mini-logo.webp' alt='mini-logo' width={50} height={50} />
             </div>
