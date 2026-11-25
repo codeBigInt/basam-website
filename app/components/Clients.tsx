@@ -3,14 +3,14 @@ import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
-const partners = [
-    { name: "Nigeria Customs Service", src: "/assets/partners/nigeria-customs.png" },
-    { name: "Homadil Realty", src: "/assets/partners/homadil.png" },
-    { name: "SABC Limited", src: "/assets/partners/sabc.png" },
-    { name: "JRB Construction Company Limited", src: "/assets/partners/jrb.webp" },
+const clients = [
+    { name: "Nigeria Customs Service", src: "/assets/clients/nigeria-customs.png" },
+    { name: "Homadil Realty", src: "/assets/clients/homadil.png" },
+    { name: "SABC Limited", src: "/assets/clients/sabc.png" },
+    { name: "JRB Construction Company Limited", src: "/assets/clients/jrb.webp" },
 ];
 
-const Partners = () => {
+const Clients = () => {
     const trackRef = useRef<HTMLDivElement>(null);
     const [canScroll, setCanScroll] = useState(false);
 
@@ -35,16 +35,16 @@ const Partners = () => {
         "shrink-0 flex items-center justify-center w-10 h-10 rounded-full bg-[#45355f] text-white hover:bg-[#45355f]/80 transition-colors";
 
     return (
-        <section id="partners" className="w-full bg-white px-6 lg:px-20 py-16">
+        <section id="clients" className="w-full bg-white px-6 lg:px-20 py-16">
             <div className="max-w-7xl mx-auto flex flex-col items-center gap-10">
                 <div className="flex flex-col items-center gap-3 text-center">
-                    <p className="text-xs bg-[#45355f]/10 rounded-3xl p-1 px-4 w-max uppercase">Who we work with</p>
-                    <h2 className="text-4xl lg:text-5xl font-semibold text-[#45355f]">Our Partners</h2>
+                    <p className="text-xs bg-[#45355f]/10 rounded-3xl p-1 px-4 w-max uppercase">Who we have served</p>
+                    <h2 className="text-4xl lg:text-5xl font-semibold text-[#45355f]">Our Clients</h2>
                 </div>
 
                 <div className="w-full flex items-center gap-4">
                     {canScroll && (
-                        <button aria-label="Previous partners" onClick={() => scroll(-1)} className={arrowClass}>
+                        <button aria-label="Previous clients" onClick={() => scroll(-1)} className={arrowClass}>
                             <ArrowLeft size={18} />
                         </button>
                     )}
@@ -52,7 +52,7 @@ const Partners = () => {
                         ref={trackRef}
                         className="flex-1 flex items-center gap-6 overflow-x-auto [&>*:first-child]:ml-auto [&>*:last-child]:mr-auto snap-x snap-mandatory scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
                     >
-                        {partners.map((p) => (
+                        {clients.map((p) => (
                             <div
                                 key={p.name}
                                 className="snap-center shrink-0 basis-1/2 md:basis-1/3 lg:basis-1/5 lg:max-w-[20%] h-28 flex items-center justify-center px-4"
@@ -68,7 +68,7 @@ const Partners = () => {
                         ))}
                     </div>
                     {canScroll && (
-                        <button aria-label="Next partners" onClick={() => scroll(1)} className={arrowClass}>
+                        <button aria-label="Next clients" onClick={() => scroll(1)} className={arrowClass}>
                             <ArrowRight size={18} />
                         </button>
                     )}
@@ -78,4 +78,4 @@ const Partners = () => {
     );
 };
 
-export default Partners;
+export default Clients;

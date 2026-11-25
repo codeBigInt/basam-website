@@ -48,8 +48,8 @@ const Nav = ({ openBooking }: Props) => {
             route: "Projects"
         },
         {
-            href: "#partners",
-            route: "Partners"
+            href: "#clients",
+            route: "Clients"
         },
     ]
 
@@ -65,7 +65,7 @@ const Nav = ({ openBooking }: Props) => {
                 <Link href={"#about"} className='hover:bg-[#45355f] hover:text-white text-[14px] cursor-pointer py-2 px-4 rounded-lg'>About</Link>
                 <Link href={"#services"} className='hover:bg-[#45355f] hover:text-white text-[14px] cursor-pointer py-2 px-4 rounded-lg'>Services</Link>
                 <Link href={"#projects"} className='hover:bg-[#45355f] hover:text-white text-[14px] cursor-pointer py-2 px-4 rounded-lg'>Projects</Link>
-                <Link href={"#partners"} className='hover:bg-[#45355f] hover:text-white text-[14px] cursor-pointer py-2 px-4 rounded-lg'>Partners</Link>
+                <Link href={"#clients"} className='hover:bg-[#45355f] hover:text-white text-[14px] cursor-pointer py-2 px-4 rounded-lg'>Clients</Link>
                 <div>
                     <button onClick={openBooking} className='py-3 flex px-4 items-center gap-2 hover:bg-[#45355f]/20 border border-[#45355f] rounded-lg'>
                         <MdOutlineLibraryBooks />
