@@ -43,7 +43,7 @@ const BookingForm = ({className}: Props) => {
   }
 
   return (
-    <div className={`max-w-[50%] w-[50%] h-full flex justify-end items-center animate-slide-in ${className}`}>
+    <div className={`w-full md:max-w-[50%] md:w-[50%] h-full flex justify-end items-center animate-slide-in ${className ?? ''}`}>
       <Form {...form}>
         <form 
           onSubmit={form.handleSubmit(handleSubmit)} 

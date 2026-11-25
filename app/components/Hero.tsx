@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import bg from "../../public/assets/images/bg.jpg"
 import BookingForm from './BookingForm'
 import Typewriter from 'typewriter-effect';
@@ -11,8 +11,7 @@ import {
   Dialog,
   DialogContent,
   DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+  } from "@/components/ui/dialog";
 
 
 interface Props {
@@ -21,6 +20,16 @@ interface Props {
 }
 
 const Hero = ({ isDisplayed, setIsDisplayed }: Props) => {
+  // Below md the form opens in a dialog; from md up it slides in beside the hero text.
+  const [isMobile, setIsMobile] = useState(false)
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)")
+    const update = () => setIsMobile(mq.matches)
+    update()
+    mq.addEventListener("change", update)
+    return () => mq.removeEventListener("change", update)
+  }, [])
+
   const bgProps = {
     backgroundImage: `url(${bg.src})`,
     backgroundSize: "cover",
@@ -48,17 +57,11 @@ const Hero = ({ isDisplayed, setIsDisplayed }: Props) => {
           </div>
           <p className='text-white text-[14px] lg:text-[16px]'>Delivering Uncompromisung Construction services.</p>
           <div className='md:flex-row flex flex-col lg:gap-3'>
-            <button onClick={() => typeof window !== "undefined" && window.innerWidth > 740 ? setIsDisplayed(!isDisplayed) : (() => { })} className='py-3 lg:my-4 my-3 md:flex hidden px-8 items-center gap-2 hover:bg-[#45355f]/20 border text-white border-white w-max rounded-lg'>
+            <button onClick={() => setIsDisplayed(true)} className='py-3 lg:my-4 my-3 flex px-8 items-center gap-2 hover:bg-[#45355f]/20 border text-white border-white w-max rounded-lg'>
               <MdOutlineLibraryBooks />
               <span className='text-[14px]'>Make Appointment</span>
             </button>
-            <Dialog>
-              <DialogTrigger asChild className='flex md:hidden'>
-                <button className='py-3 lg:my-4 my-3 flex px-8 items-center gap-2 hover:bg-[#45355f]/20 border text-white border-white w-max rounded-lg'>
-                  <MdOutlineLibraryBooks />
-                  <span className='text-[14px]'>Make Appointment</span>
-                </button>
-              </DialogTrigger>
+            <Dialog open={isMobile && isDisplayed} onOpenChange={setIsDisplayed}>
               <DialogContent className="w-full flex justify-center bg-transparent border-none">
                 <DialogTitle className='hidden'>Booking Form</DialogTitle>
                 <BookingForm className='w-full max-w-full' />
@@ -72,7 +75,7 @@ const Hero = ({ isDisplayed, setIsDisplayed }: Props) => {
             </Link>
           </div>
         </div>
-        {isDisplayed && <BookingForm />}
+        {isDisplayed && !isMobile && <BookingForm />}
         <Link href={"#about"} className='absolute max-sm:-right-3 right-0 self-end mb-6'>
           <Button className='bg-white/20 backdrop:blur-md rounded-3xl border-[2px] border-white -rotate-90'>
             <ArrowLeft />

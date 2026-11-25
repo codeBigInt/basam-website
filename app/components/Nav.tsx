@@ -13,11 +13,10 @@ import {
 import { MdOutlineLibraryBooks } from 'react-icons/md'
 
 interface Props {
-    isDisplayed: boolean;
-    setIsDisplayed: (val: boolean) => void
+    openBooking: () => void
 }
 
-const Nav = ({ isDisplayed, setIsDisplayed }: Props) => {
+const Nav = ({ openBooking }: Props) => {
     const [isOpen, setIsOpen] = useState<boolean>(false)
     const [scrolled, setScrolled] = useState(false)
 
@@ -45,8 +44,12 @@ const Nav = ({ isDisplayed, setIsDisplayed }: Props) => {
             route: "Services"
         },
         {
-            href: "#project",
+            href: "#projects",
             route: "Projects"
+        },
+        {
+            href: "#partners",
+            route: "Partners"
         },
     ]
 
@@ -62,13 +65,12 @@ const Nav = ({ isDisplayed, setIsDisplayed }: Props) => {
                 <Link href={"#about"} className='hover:bg-[#45355f] hover:text-white text-[14px] cursor-pointer py-2 px-4 rounded-lg'>About</Link>
                 <Link href={"#services"} className='hover:bg-[#45355f] hover:text-white text-[14px] cursor-pointer py-2 px-4 rounded-lg'>Services</Link>
                 <Link href={"#projects"} className='hover:bg-[#45355f] hover:text-white text-[14px] cursor-pointer py-2 px-4 rounded-lg'>Projects</Link>
+                <Link href={"#partners"} className='hover:bg-[#45355f] hover:text-white text-[14px] cursor-pointer py-2 px-4 rounded-lg'>Partners</Link>
                 <div>
-                    <Link href={"#contact-us"}>
-                        <button onClick={() => setIsDisplayed(!isDisplayed)} className='py-3 flex px-4 items-center gap-2 hover:bg-[#45355f]/20 border border-[#45355f] rounded-lg'>
-                            <MdOutlineLibraryBooks />
-                            <span className='text-[14px]'>Make Appointment</span>
-                        </button>
-                    </Link>
+                    <button onClick={openBooking} className='py-3 flex px-4 items-center gap-2 hover:bg-[#45355f]/20 border border-[#45355f] rounded-lg'>
+                        <MdOutlineLibraryBooks />
+                        <span className='text-[14px]'>Make Appointment</span>
+                    </button>
                 </div>
             </ul>
             <Sheet>
@@ -98,6 +100,12 @@ const Nav = ({ isDisplayed, setIsDisplayed }: Props) => {
                             )
                         })
                     }
+                    <SheetClose asChild>
+                        <button onClick={openBooking} className='mt-6 w-full py-3 flex justify-center items-center gap-2 bg-[#45355f] text-white rounded-lg'>
+                            <MdOutlineLibraryBooks />
+                            <span className='text-[14px]'>Make Appointment</span>
+                        </button>
+                    </SheetClose>
                 </SheetContent>
             </Sheet>
         </div>
